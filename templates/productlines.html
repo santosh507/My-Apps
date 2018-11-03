@@ -1,0 +1,28 @@
+{%extends 'layout.html'%}
+{%block style_content%}
+    <style>
+        table, tr , th , td {
+            border: 1px solid black;
+        }
+    </style>
+{%endblock style_content%}
+
+{%block content%}
+
+<h1 align="center">PRODUCT LINES</h1>
+<table>
+    {%for productheader in productheaders%}
+    <th>
+        {{productheader}}
+    </th>
+    {%endfor%}
+
+        {%for product in productline%}
+            <tr>
+            {%for productrow in product%}
+                <td>{{productrow}}</td>
+            {%endfor%}
+            </tr>
+        {%endfor%}
+</table>
+{%endblock content%}
